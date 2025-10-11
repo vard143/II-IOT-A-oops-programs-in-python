@@ -1,0 +1,2 @@
+INHERITANCE:it means transfer of charcteristics 
+from parent to child class withoyt any modifications is known as "inheritance".
