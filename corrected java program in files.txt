@@ -1,0 +1,46 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Main{
+    static Scanner scan;
+    public static void main(String[] args){
+        System.out.println("this is a rewrite of text");
+        System.out.println("option 0: create file");
+        System.out.println("option 1: update file");
+        System.out.println("option2: delerte file");
+        scan = new Scanner(System.in);
+        inputProgramme();
+
+    }
+    private static  void inputProgramme() {
+        int i = scan.nextInt();
+    if (i == 0) {
+            createFiles();
+
+
+        } else if (i == 2) {
+            File file = new File("pace.txt");
+            file.delete();
+            System.out.println("Deleted sucessfully");
+        }
+    }
+    private static void createFiles() {
+        System.out.println("youare in a create mode");
+        try {
+            String next=scan.next();
+            File file=new File("pace.txt");
+            if (file.exists()){
+                file.delete();
+            }
+            FileWriter filew = new FileWriter(file,true);
+            filew.write(next);
+            filew.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+
+}
